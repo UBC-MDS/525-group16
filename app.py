@@ -15,9 +15,9 @@ model = joblib.load("model.joblib")
 def return_prediction(input_data):
 
     # format input_data here so that you can pass it to model.predict()
-    df = pd.DataFrame(input_data)
+    df = pd.DataFrame(input_data).T
 
-    return model.predict(df)
+    return model.predict(df).tolist()
 
 
 # 3. Set up home page using basic html
